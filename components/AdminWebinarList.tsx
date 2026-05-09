@@ -29,8 +29,25 @@ function formatDateFR(dateStr: string): string {
 
 function toDatetimeLocal(isoDate: string): string {
   const d = new Date(isoDate)
-  const pad = (n: number) => n.toString().padStart(2, '0')
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`
+  const parts = new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(d)
+  const get = (type: string) => parts.find(p => p.type === type)?.value ?? '00'
+  return `${get('year')}-${get('month')}-${get('day')}T${get('hour')}:${get('minute')}`
+}
+
+function parisDatetimeToISO(localStr: string): string {
+  const naive = new Date(localStr + ':00Z')
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Europe/Paris',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
+  }).formatToParts(naive)
+  const get = (type: string) => parts.find(p => p.type === type)?.value ?? '00'
+  const parisMs = Date.UTC(+get('year'), +get('month') - 1, +get('day'), +get('hour'), +get('minute'), +get('second'))
+  return new Date(naive.getTime() - (parisMs - naive.getTime())).toISOString()
 }
 
 export default function AdminWebinarList() {
@@ -59,7 +76,7 @@ export default function AdminWebinarList() {
 
     const payload = {
       title: form.title,
-      date: new Date(form.date).toISOString(),
+      date: parisDatetimeToISO(form.date),
       zoom_link: form.zoom_link || null,
     }
 
