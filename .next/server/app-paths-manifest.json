@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/admin/subscribers/route": "app/api/admin/subscribers/route.js",
+  "/api/admin/subscribers/[id]/toggle-interest/route": "app/api/admin/subscribers/[id]/toggle-interest/route.js",
+  "/api/admin/subscribers/export/route": "app/api/admin/subscribers/export/route.js",
+  "/api/admin/webinars/[id]/send-zoom/route": "app/api/admin/webinars/[id]/send-zoom/route.js",
+  "/api/admin/webinars/[id]/route": "app/api/admin/webinars/[id]/route.js",
+  "/api/admin/webinars/[id]/toggle-active/route": "app/api/admin/webinars/[id]/toggle-active/route.js",
+  "/api/subscribe/route": "app/api/subscribe/route.js",
+  "/api/admin/webinars/route": "app/api/admin/webinars/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
+}
