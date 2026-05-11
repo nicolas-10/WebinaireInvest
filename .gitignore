@@ -1,3 +1,8 @@
+.env.local
+.env
+node_modules/
+.next/
+*.log
 
 node_modules
 ### AL ###
@@ -64,3 +69,4 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
