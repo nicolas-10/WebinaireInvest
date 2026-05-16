@@ -15,8 +15,12 @@ interface WebinarFormData {
 
 const EMPTY_FORM: WebinarFormData = { title: '', date: '', zoom_link: '' }
 
+function asUTC(dateStr: string): string {
+  return /Z|[+-]\d{2}/.test(dateStr) ? dateStr : dateStr + 'Z'
+}
+
 function formatDateFR(dateStr: string): string {
-  return new Date(dateStr).toLocaleString('fr-FR', {
+  return new Date(asUTC(dateStr)).toLocaleString('fr-FR', {
     weekday: 'short',
     year: 'numeric',
     month: 'short',
@@ -28,7 +32,7 @@ function formatDateFR(dateStr: string): string {
 }
 
 function toDatetimeLocal(isoDate: string): string {
-  const d = new Date(isoDate)
+  const d = new Date(asUTC(isoDate))
   const parts = new Intl.DateTimeFormat('fr-FR', {
     timeZone: 'Europe/Paris',
     year: 'numeric', month: '2-digit', day: '2-digit',
