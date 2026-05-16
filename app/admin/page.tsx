@@ -26,7 +26,7 @@ function LoginForm({ onLogin }: { onLogin: (pwd: string) => Promise<string | nul
     <main className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <span className="text-indigo-600 font-bold text-2xl">◆ INVEST WEBINAR</span>
+          <span className="text-indigo-600 font-bold text-2xl">INVEST WEBINAR</span>
           <p className="text-slate-500 text-sm mt-2">Espace de gestion</p>
         </div>
 
