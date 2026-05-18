@@ -164,7 +164,7 @@ export default function AdminWebinarList() {
         <h2 className="text-xl font-bold text-gray-900">Webinaires</h2>
         <button
           onClick={openCreate}
-          className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+          className="bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-900 transition-colors"
         >
           + Nouveau webinaire
         </button>
@@ -181,7 +181,7 @@ export default function AdminWebinarList() {
             <div
               key={w.id}
               className={`bg-white rounded-xl border-2 p-5 transition-all ${
-                w.is_active ? 'border-indigo-500 shadow-md' : 'border-gray-200'
+                w.is_active ? 'border-blue-800 shadow-md' : 'border-gray-200'
               }`}
             >
               <div className="flex items-start justify-between gap-4 flex-wrap">
@@ -241,7 +241,7 @@ export default function AdminWebinarList() {
                   <button
                     onClick={() => handleSendZoom(w)}
                     disabled={sendingZoomId === w.id}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+                    className="bg-blue-800 hover:bg-blue-900 disabled:opacity-60 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
                   >
                     {sendingZoomId === w.id ? 'Envoi…' : '📧 Envoyer Zoom'}
                   </button>
@@ -284,7 +284,7 @@ export default function AdminWebinarList() {
                   onChange={(e) => setForm((p) => ({ ...p, title: e.target.value }))}
                   required
                   placeholder="Webinaire Investissement — Juin 2025"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
               </div>
 
@@ -297,7 +297,7 @@ export default function AdminWebinarList() {
                   value={form.date}
                   onChange={(e) => setForm((p) => ({ ...p, date: e.target.value }))}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
               </div>
 
@@ -311,7 +311,7 @@ export default function AdminWebinarList() {
                   value={form.zoom_link}
                   onChange={(e) => setForm((p) => ({ ...p, zoom_link: e.target.value }))}
                   placeholder="https://zoom.us/j/123456789"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
               </div>
 
@@ -332,7 +332,7 @@ export default function AdminWebinarList() {
                 <button
                   type="submit"
                   disabled={formLoading}
-                  className="flex-1 bg-indigo-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 disabled:opacity-60 transition-colors"
+                  className="flex-1 bg-blue-800 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-blue-900 disabled:opacity-60 transition-colors"
                 >
                   {formLoading ? 'Enregistrement…' : editingWebinar ? 'Modifier' : 'Créer'}
                 </button>

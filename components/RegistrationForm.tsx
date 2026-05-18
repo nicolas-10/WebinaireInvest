@@ -108,7 +108,7 @@ export default function RegistrationForm({ webinarId }: Props) {
             required
             autoComplete="given-name"
             placeholder="Jean"
-            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-shadow"
           />
         </div>
         <div>
@@ -123,7 +123,7 @@ export default function RegistrationForm({ webinarId }: Props) {
             required
             autoComplete="family-name"
             placeholder="Dupont"
-            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-shadow"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function RegistrationForm({ webinarId }: Props) {
           required
           autoComplete="email"
           placeholder="jean.dupont@email.com"
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-shadow"
         />
       </div>
 
@@ -158,14 +158,14 @@ export default function RegistrationForm({ webinarId }: Props) {
           onChange={handleChange}
           autoComplete="tel"
           placeholder="+33 6 12 34 56 78"
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-shadow"
         />
       </div>
 
       {/* Description */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Situation &amp; objectifs{' '}
+          Description de votre projet{' '}
           <span className="text-gray-400 text-xs font-normal">(optionnel)</span>
         </label>
         <textarea
@@ -174,7 +174,7 @@ export default function RegistrationForm({ webinarId }: Props) {
           onChange={handleChange}
           rows={3}
           placeholder="Ex : investisseur débutant, intéressé par l'immobilier locatif…"
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow resize-none"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent transition-shadow resize-none"
         />
       </div>
 
@@ -189,7 +189,7 @@ export default function RegistrationForm({ webinarId }: Props) {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 text-white font-bold py-3.5 px-6 rounded-lg transition-colors text-sm tracking-wide"
+        className="w-full bg-blue-800 hover:bg-blue-900 disabled:opacity-70 text-white font-bold py-3.5 px-6 rounded-lg transition-colors text-sm tracking-wide"
       >
         {status === 'loading' ? (
           <span className="flex items-center justify-center gap-2">
